@@ -24,10 +24,9 @@ class DiceTray(StatisticsInterface):
     """ Enable a die in the tray at random """
 
     def EnableRandom(self):
-        not_enabled = [i for i in range(
-            0, len(self.dice)) if i not in self.enabled]
+        not_enabled = [i for i in range(0, len(self.dice)) if i not in self.enabled]
         if len(not_enabled) > 0:
-            index = not_enabled[self.rng.RandomInt(0, len(not_enabled)-1)]
+            index = not_enabled[self.rng.RandomInt(0, len(not_enabled) - 1)]
             self.enabled.append(index)
 
     """ Disable all enabled dice """
@@ -44,17 +43,19 @@ class DiceTray(StatisticsInterface):
         for index in self.enabled:
             ret.append(self.dice[index].Roll())
         self.rollHistory.append(sum(ret))
-        return (ret)
+        return ret
 
     def GetStats(self) -> dict:
         ret = {"rollHistory": self.rollHistory}
         for index, die in enumerate(self.dice):
             ret[f"rollHistoryDie{index}"] = die.GetStats()["rollHistory"]
-        return (ret)
+        return ret
 
 
 if __name__ == "__main__":
-    print("Creating tray with 4 default dice, selecting 2 at random and rolling 10 times")
+    print(
+        "Creating tray with 4 default dice, selecting 2 at random and rolling 10 times"
+    )
     tray = DiceTray(dice=[Die() for i in range(0, 4)])
     for i in range(0, 2):
         tray.EnableRandom()
