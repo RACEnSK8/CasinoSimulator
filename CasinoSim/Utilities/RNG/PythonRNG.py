@@ -1,5 +1,6 @@
-from CasinoSim.Utilities.RNG.RNGInterface import RNGInterface
 from random import randint
+
+from CasinoSim.Utilities.RNG.RNGInterface import RNGInterface
 
 """ Random Number Generator implemented with standard python random library """
 
