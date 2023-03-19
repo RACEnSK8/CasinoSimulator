@@ -1,7 +1,8 @@
 from CasinoSim.Items.Die import Die
 from CasinoSim.Utilities.RNG.PythonRNG import PythonRNG
 from CasinoSim.Utilities.RNG.RNGInterface import RNGInterface
-from CasinoSim.Utilities.Statistics.StatisticsInterface import StatisticsInterface
+from CasinoSim.Utilities.Statistics.StatisticsInterface import \
+    StatisticsInterface
 
 """ Dice Tray holds many dice, and handles rolling all enabled die at the same time """
 
