@@ -1,5 +1,4 @@
 import abc
-
 """ Interface that all available Random Number Generators need to implement """
 
 

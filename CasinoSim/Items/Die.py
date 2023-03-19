@@ -2,7 +2,6 @@ from CasinoSim.Utilities.RNG.PythonRNG import PythonRNG
 from CasinoSim.Utilities.RNG.RNGInterface import RNGInterface
 from CasinoSim.Utilities.Statistics.StatisticsInterface import \
     StatisticsInterface
-
 """ Implementation of a single die """
 
 

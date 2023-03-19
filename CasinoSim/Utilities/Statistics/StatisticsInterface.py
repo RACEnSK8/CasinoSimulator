@@ -1,5 +1,4 @@
 import abc
-
 """ Interface for classes that supply statistics """
 
 
