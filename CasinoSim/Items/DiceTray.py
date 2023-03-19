@@ -3,11 +3,11 @@ from CasinoSim.Utilities.RNG.PythonRNG import PythonRNG
 from CasinoSim.Utilities.RNG.RNGInterface import RNGInterface
 from CasinoSim.Utilities.Statistics.StatisticsInterface import \
     StatisticsInterface
-
 """ Dice Tray holds many dice, and handles rolling all enabled die at the same time """
 
 
 class DiceTray(StatisticsInterface):
+
     def __init__(self, dice: list[Die], rng: RNGInterface = PythonRNG()):
         self.dice = dice
         self.rng = rng
@@ -25,7 +25,9 @@ class DiceTray(StatisticsInterface):
     """ Enable a die in the tray at random """
 
     def EnableRandom(self):
-        not_enabled = [i for i in range(0, len(self.dice)) if i not in self.enabled]
+        not_enabled = [
+            i for i in range(0, len(self.dice)) if i not in self.enabled
+        ]
         if len(not_enabled) > 0:
             index = not_enabled[self.rng.RandomInt(0, len(not_enabled) - 1)]
             self.enabled.append(index)
@@ -64,7 +66,8 @@ if __name__ == "__main__":
     for i in range(0, 10):
         tray.Roll()
     print(tray.GetStats())
-    print("Disabling all dice in tray, enabling die 0 & 1, re-rolling 10 times")
+    print(
+        "Disabling all dice in tray, enabling die 0 & 1, re-rolling 10 times")
     tray.DisableAll()
     tray.EnableByIndex(0)
     tray.EnableByIndex(1)
