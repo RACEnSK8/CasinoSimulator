@@ -7,4 +7,4 @@ setup(name='CasinoSim',
       description='Library used for Casino simulations',
       author='Chris Buchter',
       author_email='Print.Practical@gmail.com',
-     )
+      )
