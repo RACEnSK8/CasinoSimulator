@@ -1,26 +1,32 @@
-from CasinoSim.Utilities.RNG.RNGInterface import RNGInterface
 from CasinoSim.Utilities.RNG.PythonRNG import PythonRNG
-from CasinoSim.Utilities.Statistics.StatisticsInterface import StatisticsInterface
-
+from CasinoSim.Utilities.RNG.RNGInterface import RNGInterface
+from CasinoSim.Utilities.Statistics.StatisticsInterface import \
+    StatisticsInterface
 """ Implementation of a single die """
+
+
 class Die(StatisticsInterface):
-    """ Initialization of the die """
-    def __init__(self, sides : int = 6, rng : RNGInterface = PythonRNG()):
+    """Initialization of the die"""
+
+    def __init__(self, sides: int = 6, rng: RNGInterface = PythonRNG()):
         self.sides = sides
         self.rng = rng
         self.history = []
 
     """ Rolls the die and returns the value of the roll """
+
     def Roll(self) -> int:
         value = self.rng.RandomInt(1, self.sides)
         self.history.append(value)
-        return(value)
-    
+        return value
+
     """ StatisticsInterface implementation """
+
     def GetStats(self) -> dict:
-        ret = { "rollHistory" : self.history }
-        return(ret)
-    
+        ret = {"rollHistory": self.history}
+        return ret
+
+
 if __name__ == "__main__":
     print("Rolling a default die 10 times")
     die = Die()
