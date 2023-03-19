@@ -4,7 +4,8 @@ import abc
 
 
 class StatisticsInterface(metaclass=abc.ABCMeta):
-    """ Returns a dictionary of statistics """
+    """Returns a dictionary of statistics"""
+
     @abc.abstractmethod
     def GetStats(self) -> dict:
         raise NotImplementedError

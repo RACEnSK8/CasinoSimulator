@@ -6,7 +6,7 @@ from CasinoSim.Utilities.Statistics.StatisticsInterface import StatisticsInterfa
 
 
 class Die(StatisticsInterface):
-    """ Initialization of the die """
+    """Initialization of the die"""
 
     def __init__(self, sides: int = 6, rng: RNGInterface = PythonRNG()):
         self.sides = sides
@@ -18,13 +18,13 @@ class Die(StatisticsInterface):
     def Roll(self) -> int:
         value = self.rng.RandomInt(1, self.sides)
         self.history.append(value)
-        return (value)
+        return value
 
     """ StatisticsInterface implementation """
 
     def GetStats(self) -> dict:
         ret = {"rollHistory": self.history}
-        return (ret)
+        return ret
 
 
 if __name__ == "__main__":

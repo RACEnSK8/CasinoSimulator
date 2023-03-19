@@ -6,4 +6,4 @@ from random import randint
 
 class PythonRNG(RNGInterface):
     def RandomInt(self, lower: int, upper: int) -> int:
-        return (randint(lower, upper))
+        return randint(lower, upper)
